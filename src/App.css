@@ -10,3 +10,19 @@ a{
 * {
     box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+  ::-webkit-scrollbar-track {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
