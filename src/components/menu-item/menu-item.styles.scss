@@ -1,13 +1,21 @@
 .menu-item {
     min-width: 30%;
-    height: 240px;
+    min-height: 240px;
     flex: 1 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid black;
-    margin: 0 7.5px 15px;
+    margin: 0 7.5px 7.5px;
     overflow: hidden;
+    @media (max-width:580px) {
+      width: 100%;
+    }
+    @media (max-width:1110px){
+      &:nth-last-child(-n+3){
+        width: 100%;
+      }
+    }
 
     &:hover{
       cursor: pointer;
@@ -25,7 +33,7 @@
   
 
     &.large{
-      height: 380px;
+      min-height: 400px;
     }
     &:first-child {
       margin-right: 7.5px;
