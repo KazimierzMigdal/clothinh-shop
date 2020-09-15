@@ -21,6 +21,11 @@
       .option {
         padding: 10px 15px;
         cursor: pointer;
+        @media (max-width: 580px) {
+          &:nth-child(-n+2){
+            display: none;
+          }
+        }
       }
     }
   }
