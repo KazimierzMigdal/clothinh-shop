@@ -4,6 +4,27 @@
     flex-direction: column;
     height: 350px;
     align-items: center;
+    @media (max-width:1110px){
+      width: 30%;
+      &:nth-last-child(-n+1){
+        display: none;
+      }
+    }
+    @media (max-width:880px){
+      margin: 0 auto;
+      width: 45%;
+      &:nth-last-child(-n+2){
+        display: none;
+      }
+    }
+
+    @media (max-width:580px){
+      margin: 0 auto;
+      width: 90%;
+      &:nth-last-child(-n+3){
+        display: none;
+      }
+    }
   
     .image {
       width: 100%;
