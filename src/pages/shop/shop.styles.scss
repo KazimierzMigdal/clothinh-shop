@@ -2,8 +2,5 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 80px;
-    @media (max-width:580px) {
-      padding: 20px 0px;
-    }
+    margin: calc(0.15*25px) 25px;
   }

@@ -5,8 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
-    margin: 0 7.5px 7.5px;
+    // border: 1px solid black;
+    margin: calc(0.25*25px);
     overflow: hidden;
     @media (max-width:580px) {
       width: 100%;
@@ -27,7 +27,7 @@
 
       & .content{
         opacity: 0.9;
-        transition: opacity 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        transition: opacity 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
       }
     }
   
@@ -62,7 +62,7 @@
       background-color: #fff;
       opacity: 0.6;
       position: absolute;
-      transition: opacity 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      transition: opacity 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   
       .title {
         font-weight: bold;
