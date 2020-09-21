@@ -27,7 +27,7 @@ const Header = ({ currentUser, hidden }) =>(
             <Link to='/shop' className='option'>
                 CONTACT
             </Link>
-            <CartIcon />
+            <CartIcon className='shoping-bag-icon'/>
             {
                 currentUser ?
                 (<div className='option' onClick={()=>auth.signOut()}>
