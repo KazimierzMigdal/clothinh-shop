@@ -11,13 +11,15 @@
       width: 24px;
       height: 24px;
       margin-top: -6px;
+      &:hover{
+        stroke-width: 18;
+      }
     }
   
     .item-count {
       position: absolute;
       font-size: 10px;
       font-weight: bold;
-    //   bottom: 12px;
     }
   }
   
