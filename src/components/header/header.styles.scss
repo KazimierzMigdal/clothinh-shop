@@ -10,6 +10,18 @@
       height: 100%;
       width: 70px;
       margin-top: 25px;
+      @media (max-width: 580px){
+        display:none
+      }
+    }
+
+    .small-screen-logo-container {
+      height: 100%;
+      width: 70px;
+      margin-top: 25px;
+      @media (min-width: 580px){
+        display: none
+      }
     }
   
     .options {
