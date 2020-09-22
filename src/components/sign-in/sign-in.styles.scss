@@ -1,5 +1,5 @@
 .sign-in{
-    width: 380px;
+    width: 100%;
     display: flex;
     flex-direction: column;
 
@@ -10,5 +10,10 @@
     .buttons{
         display: flex;
         justify-content: space-between;
+        @media (max-width:580px){
+            flex-direction: column;
+            align-content: space-between;
+            padding: 10px 0;
+            }
+        }
     }
-}
