@@ -29,8 +29,23 @@
   
     .total {
       margin-top: 30px;
-      margin-left: auto;
-      font-size: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-self: stretch;
+      width: 100%;
+      .price{
+        font-size: 36px;
+      }
+      .payment{
+        margin: auto 0;
+      }
+    }
+    .test-worning{
+      text-align: center;
+      color: red;
+      font-weight: bold;
+      font-size: 24px;
+      margin-top: 40px; 
     }
   }
   
