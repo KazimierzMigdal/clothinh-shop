@@ -15,7 +15,7 @@ const DropdownMenu = ({ dropdownLink, history, dispatch}) =>(
                 className={`dropdown-link ${dropdownLink.isShopCategory ? 'shop-link': ''}`}
                 key={dropdownLink.id}
                 onClick={() => {
-                    history.push(`${dropdownLink.linkUrl}`); 
+                    history.push(dropdownLink.linkUrl); 
                     dispatch(toggleDropdownHidden())
                 }}
                 >

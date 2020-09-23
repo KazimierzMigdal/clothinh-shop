@@ -12,37 +12,37 @@ const INITIAL_STATE = {
         {
           id: 2,
           title: 'shop',
-          linkUrl: 'shop/',
+          linkUrl: '/shop',
           isShopCategory: false
         },
         {
           id: 3,
           title: 'hats',
-          linkUrl: 'shop/hats',
+          linkUrl: '/shop/hats',
           isShopCategory: true
         },
         {
           id: 4,
           title: 'jackets',
-          linkUrl: 'shop/jackets',
+          linkUrl: '/shop/jackets',
           isShopCategory: true
         },
         {
           id: 5,
           title: 'sneakers',
-          linkUrl: 'shop/sneakers',
+          linkUrl: '/shop/sneakers',
           isShopCategory: true
         },
         {
           id: 6,
           title: 'womens',
-          linkUrl: 'shop/womens',
+          linkUrl: '/shop/womens',
           isShopCategory: true
         },
         {
           id: 7,
           title: 'mens',
-          linkUrl: 'shop/mens',
+          linkUrl: '/shop/mens',
           isShopCategory: true
         },
         {
