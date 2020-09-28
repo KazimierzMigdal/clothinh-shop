@@ -1,18 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { createStructuredSelector } from 'reselect';
+
+import { DropdownMenuContainer, DropdownMenuLink } from './dropdown-menu.styles.js'
+
 import { selectDropdownLinks } from '../../redux/dropdown/dropdown.selectors.js';
 import { toggleDropdownHidden } from '../../redux/dropdown/dropdown.actions.js';
-import { withRouter } from 'react-router-dom'
 
-import './dropdown-menu.styles.scss'
 
 const DropdownMenu = ({ dropdownLink, history, dispatch}) =>(
-    <div className='dropdown-menu'>
+    <DropdownMenuContainer >
         {
             dropdownLink.map(dropdownLink => (
-                <span 
-                className={`dropdown-link ${dropdownLink.isShopCategory ? 'shop-link': ''}`}
+                <DropdownMenuLink 
+                isShopCategory={dropdownLink.isShopCategory}
                 key={dropdownLink.id}
                 onClick={() => {
                     history.push(dropdownLink.linkUrl); 
@@ -20,10 +22,10 @@ const DropdownMenu = ({ dropdownLink, history, dispatch}) =>(
                 }}
                 >
                     {dropdownLink.title.toUpperCase()}
-                </span>
+                </DropdownMenuLink>
             ))
         }
-    </div>
+    </DropdownMenuContainer>
 )
 
 const mapStateToProps = createStructuredSelector({
