@@ -3,7 +3,7 @@ import { takeLatest, put, all, call } from 'redux-saga/effects'
 import UserActionTypes from './user.types.js';
 import { signInSuccess, signInFailure } from './user.action.js'
 
-import { auth, createUserProfileDocument, googleProvider } from '../../firebase/firebase.utils.js'
+import { auth, createUserProfileDocument, getCurrentUser, googleProvider } from '../../firebase/firebase.utils.js'
 
 export function* getSnapshotFromUserAuth(userAuth) {
     try{    
@@ -15,10 +15,11 @@ export function* getSnapshotFromUserAuth(userAuth) {
     }
 }
 
-export  function* signInWithGoogle(){
+export function* isUserAuthenticated() {
     try{
-        const {user} = yield auth.signInWithPopup(googleProvider);
-        yield getSnapshotFromUserAuth(user)
+        const userAuth = yield getCurrentUser()
+        if (!userAuth) return;
+        yield getSnapshotFromUserAuth(userAuth)
     } catch(error){
         yield put(signInFailure(error))
     }
@@ -32,6 +33,19 @@ export function* onEmailSignInStart() {
     yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START, signInWithEmail)
 }
 
+export function* onCheckUserSession() {
+    yield takeLatest(UserActionTypes.CHECK_USER_SESSION, isUserAuthenticated)
+}
+
+export  function* signInWithGoogle(){
+    try{
+        const {user} = yield auth.signInWithPopup(googleProvider);
+        yield getSnapshotFromUserAuth(user)
+    } catch(error){
+        yield put(signInFailure(error))
+    }
+}
+
 export function* signInWithEmail ({ payload: {email, password }}) {
     try{
         const {user} = yield auth.signInWithEmailAndPassword(email, password);
@@ -43,7 +57,8 @@ export function* signInWithEmail ({ payload: {email, password }}) {
 
 export function* userSagas(){
     yield  all([
-        call(onGoogleSignInStart),
-        call(onEmailSignInStart)
+        call(onCheckUserSession),
+        call(onEmailSignInStart),
+        call(onGoogleSignInStart)
     ])
 }

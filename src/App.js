@@ -11,6 +11,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import ShopPage from './pages/shop/shop.component.js';
 import HomePage from './pages/homepage/homepage.component.js';
 
+import { checkUserSession } from './redux/user/user.action.js';
 import { selectCurrentUser } from './redux/user/user.selectors.js';
 
 import './App.css';
@@ -19,6 +20,11 @@ import './App.css';
 class App extends React.Component { 
     
   unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    const { checkUserSession } = this.props
+    checkUserSession()
+  }
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
@@ -52,5 +58,9 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 })
 
+const mapDispatchToProps = dispatch =>({
+  checkUserSession: () => dispatch(checkUserSession())
+})
 
-export default connect(mapStateToProps)(App);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
