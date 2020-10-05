@@ -61,7 +61,7 @@ export function* onSignUpSuccess() {
     yield takeLatest(UserActionTypes.SIGN_UP_SUCCESS, signInAfterSignUp)
 }
 
-export function* signInAfterSignUp({ user, additionalData}) {
+export function* signInAfterSignUp({ payload: { user, additionalData } }) {
     yield getSnapshotFromUserAuth(user, additionalData)
 }
 
