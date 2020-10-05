@@ -11,7 +11,7 @@ import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actio
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
-    const [userCredentials, setUserCredentials] = useState({ email: '', pasword: '' })
+    const [userCredentials, setUserCredentials] = useState({ email: '', password: '' })
 
     const { email, password } = userCredentials
     
